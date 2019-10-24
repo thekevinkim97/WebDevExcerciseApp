@@ -1,5 +1,5 @@
 const exercises = [
-    { exercise_name: "Bench Press" }
+    { name: "Bench Press", sets: 3, reps: 5}
 ];
 
 module.exports = exercises;
