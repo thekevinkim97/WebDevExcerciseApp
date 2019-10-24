@@ -1,13 +1,18 @@
 const express = require('express');
 const path = require('path');
-const allInfoController = require('./controllers/AllInfo');
+const userController = require('./controllers/Users');
+const friendController = require('./controllers/Friends');
+const exerciseController = require('./controllers/Exercises');
 
 const app = express();
-const port = process.env.PORT || 9000;
+const port = 9000;
 
 app
-    .get('/port', (req, res) => res.send("Using port: "+ port)
-    .get('/sql', (req, res) => res.send(process.env.MYSQLCONNSTR_localdb)))
-    .use('/profile', allInfoController);
-
-app.listen(port, () => console.log(`Running app on http://localhost:${port}`));
+    .get('/', (req, res) => {
+        res.send("Hello There!")
+    })
+    .use('/users', userController )
+    .use('/friends', friendController)
+    .use('/exercises', exerciseController)
+    
+    .listen(port, () => console.log(`Running on http://localhost:${port}`));
