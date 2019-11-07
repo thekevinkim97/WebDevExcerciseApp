@@ -1,18 +1,21 @@
 export const Exercise_Server = {
     User: [],
+    User_Photo: [
+        "https://i.pinimg.com/originals/69/c7/b2/69c7b2d06ce57c340fcae4857cc4f1de.jpg",
+    ],
     Weight: [],
     Height: [],
+    Friends: [],
+    Exercises: [],
     Get_Weight() {
         return this.Weight
     },
     Get_Height() {
         return this.Height
     },
-    Friends: [],
-    User_Photo: [
-        "http://www.dailyhaha.com/_pics/prepared-to-slice-onions.jpg",
-    ],
-    Exercises: [],
+    Get_User_Photo() {
+        return User_Photo;
+    }
 }
 
 export const Exercise_Client = {
@@ -29,6 +32,10 @@ export const Exercise_Client = {
         { name: "Bernie"},
         { name: "Donald"},
         { name: "Andrew"},
+    ],
+    Exercises: [
+        { name: "Bicep Curls"},
+        { name: "Bench Press"},
     ]
 }
 

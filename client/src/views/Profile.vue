@@ -6,7 +6,7 @@
 
     <div class="columns">
         <div class="column is-one-quarter">
-            <div class= "box is-clickable" @click="userClicked">
+            <div class= "box is-clickable" @click="$event.target.classList.toggle('Photo')">
             <ul class="panel">
                 <p class="panel-heading">
                     User
@@ -28,7 +28,9 @@
                 </li>
             </ul>
         </div>
-
+        <div class="Column" id="Photo">
+            <img alt="Current Picture" class="image is-fullwidth" :src="Profile.User_Photo_Show"/>
+        </div>
     </div>
 
 </div>
@@ -42,10 +44,10 @@ export default {
     }), 
     methods: {
         userClicked() {
-            this.profile.Height = Exercise_Server.Get_Height;
-            this.profile.Weight = Exercise_Server.Get_Weight;
+            this.Profile.User_Photo_Show = Exercise_Server.Get_User_Photo();
         }
-    }
+    },
+    seen: true
 }
 </script>
 
