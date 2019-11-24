@@ -9,7 +9,7 @@
                 <p class="panel-heading">
                     List
                 </p>
-                <li v-for="(p, i) in Profile.Exercises" :key="i" class="panel-block is-active">
+                <li v-for="(p, i) in profile.Exercises" :key="i" class="panel-block is-active">
                     {{p.name}}
                 </li>
             </ul>
@@ -20,10 +20,13 @@
 </template>
 
 <script>
-import {Exercise_Client, Exercise_Server} from "../models/Profile";
+import { Exercise_Server } from "../models/Profile";
 export default {
     data: ()=> ({
-        Profile: Exercise_Client
+        profile: {}
     }), 
+    async created() {
+        this.profile = await Exercise_Server.Get_State();
+    }, 
 }
 </script>

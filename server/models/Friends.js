@@ -1,7 +1,7 @@
 const friends = [
-    { first_name: "Chloe", last_name: "Ong" }, 
-    { first_name: "Johnathan", last_name: "Kwan" }, 
-    { first_name: "Vivian", last_name: "Chen" }, 
+    { name: "Chloe Ong" }, 
+    { name: "Johnathan Kwan" }, 
+    { name: "Vivian Chen" }, 
 ];
 
 module.exports = friends;
