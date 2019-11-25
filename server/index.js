@@ -19,5 +19,9 @@ app
     .use('/static', express.static( path.join( __dirname , '../NoFramework' ) ) )
     .use('/profile', profileController)
     
-    
-    .listen(port, () => console.log(`Running on http://localhost:${port}`));
+app
+    .use((err, req, res, next) => {
+        res.status(err.code || 500).send({ message: err.message || '' + err })
+    })
+
+app.listen(port, () => console.log(`Running on http://localhost:${port}`));

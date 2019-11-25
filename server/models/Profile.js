@@ -1,3 +1,4 @@
+const { CustomError } = require('./CustomError');
 
 module.exports.Profile = {
     Name: "Kevin Kim",
@@ -14,7 +15,7 @@ module.exports.Profile = {
     ],
     Join(name){
         if(this.Friends.find(x=> x.name == name )){
-            return -1;
+            throw new CustomError(409, 'Another user is already using that name.');
         }
         this.Friends.push({ name, score: 0 });
         return this.Friends.length - 1;

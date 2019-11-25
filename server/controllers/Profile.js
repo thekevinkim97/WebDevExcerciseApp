@@ -7,11 +7,7 @@ app.get('/', (req, res)=> {
 });
 app.post('/friends', (req, res)=>{
     const friend_id = Profile.Join(req.body.name);
-    if(friend_id == -1){
-        res.status(500).send({ success: false, message: "Invalid name" });
-    }else{
-        res.send({ success: true, friend_id });
-    }
+    res.send({ success: true, Friend_id });
 } );
 
 module.exports=app;
