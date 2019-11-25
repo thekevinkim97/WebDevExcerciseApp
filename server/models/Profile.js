@@ -1,5 +1,3 @@
-const Friends_List = require('./Friends');
-const Exercise_List = require('./Exercises');
 
 module.exports.Profile = {
     Name: "Kevin Kim",
@@ -14,6 +12,13 @@ module.exports.Profile = {
         { name: "Bench Press", sets: 3, reps: 5},
         { name: "Bicep Curl", sets: 3, reps: 10}
     ],
+    Join(name){
+        if(this.Friends.find(x=> x.name == name )){
+            return -1;
+        }
+        this.Friends.push({ name, score: 0 });
+        return this.Friends.length - 1;
+    },
     Get_State() {
         return {
             Name: this.Name,

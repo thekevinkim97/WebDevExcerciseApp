@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Profile from '../views/Profile.vue';
 import Exercises from '../views/Exercises.vue';
+import AddFriend from '../views/AddFriend';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ const routes = [
     name: 'exercises',
     component: Exercises,
   },
+  {
+    path: '/addfriend',
+    name: 'add-friend',
+    component: AddFriend,
+  }
 ];
 
 const router = new VueRouter({
