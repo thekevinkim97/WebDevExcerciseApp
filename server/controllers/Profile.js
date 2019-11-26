@@ -7,7 +7,7 @@ app.get('/', (req, res)=> {
 });
 app.post('/friends', (req, res)=>{
     const friend_id = Profile.Join(req.body.name);
-    res.send({ success: true, Friend_id });
+    res.send({ success: true, friend_id });
 } );
 
 module.exports=app;

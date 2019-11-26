@@ -51,7 +51,7 @@ export default {
     }),
     methods: {
         join(){
-            Exercise_Server.Join(this.name)
+            Exercise_Server.join(this.name)
             .then(x=> this.$router.push( { name: 'profile'} ) )
                 .catch(err=> {
                     console.error(err);
