@@ -4,7 +4,10 @@ export const Exercise_Server = {
     Get_State() {
         return api('')
     },
-    join(name) {
+    joinFriend(name) {
         return api('friends', { name });
+    },
+    joinExercise(name) {
+        return api('exercises', { name });
     }
 }

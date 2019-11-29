@@ -13,12 +13,19 @@ module.exports.Profile = {
         { name: "Bench Press", sets: 3, reps: 5},
         { name: "Bicep Curl", sets: 3, reps: 10}
     ],
-    Join(name){
+    JoinFriend(name){
         if(this.Friends.find(x=> x.name == name )){
-            throw new CustomError(409, 'Another user is already using that name.');
+            throw new CustomError(409, 'You already have a friend with that name');
         }
         this.Friends.push({ name, score: 0 });
         return this.Friends.length - 1;
+    },
+    JoinExercise(name){
+        if(this.Exercises.find(x=> x.name == name )){
+            throw new CustomError(409, 'You already have this exercise');
+        }
+        this.Exercises.push({ name, score: 0 });
+        return this.Exercises.length - 1;
     },
     Get_State() {
         return {

@@ -5,10 +5,10 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
-          Primary bold title
+          Kevin's Exercise Tracker
         </h1>
         <h2 class="subtitle">
-          Primary bold subtitle
+          Welcome!
         </h2>
       </div>
     </div>
