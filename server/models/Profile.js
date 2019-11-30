@@ -27,6 +27,20 @@ module.exports.Profile = {
         this.Exercises.push({ name, score: 0 });
         return this.Exercises.length - 1;
     },
+    UnlinkFriend(name){
+        if(this.Friends.find(x=> x.name == name )){
+            this.Friends.pop({ name, score: 0 });
+            return this.Friends.length - 1;
+        }
+        throw new CustomError(409, 'You do not have a friend with that name');
+    },
+    UnlinkExercise(name){
+        if(this.Exercises.find(x=> x.name == name )){
+            this.Exercises.pop({ name, score: 0 });
+            return this.Exercises.length - 1;
+        }
+        throw new CustomError(409, 'You do not have this exercise');
+    },
     Get_State() {
         return {
             Name: this.Name,

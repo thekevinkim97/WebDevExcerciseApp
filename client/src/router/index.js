@@ -5,6 +5,8 @@ import Profile from '../views/Profile.vue';
 import Exercises from '../views/Exercises.vue';
 import AddFriend from '../views/AddFriend';
 import AddExercise from '../views/AddExercise';
+import DeleteFriend from '../views/DeleteFriend';
+import DeleteExercise from '../views/DeleteExercise';
 import Login from '../views/Login';
 
 Vue.use(VueRouter);
@@ -34,6 +36,16 @@ const routes = [
     path: '/addexercise',
     name: 'add-exercise',
     component: AddExercise,
+  },
+  {
+    path: '/deleteexercise',
+    name: 'delete-exercise',
+    component: DeleteExercise,
+  },
+  {
+    path: '/deletefriend',
+    name: 'delete-friend',
+    component: DeleteFriend,
   },
   {
     path: '/login',

@@ -5,9 +5,15 @@ export const Exercise_Server = {
         return api('')
     },
     joinFriend(name) {
-        return api('friends', { name });
+        return api('addfriends', { name });
     },
     joinExercise(name) {
-        return api('exercises', { name });
-    }
+        return api('addexercises', { name });
+    },
+    unlinkFriend(name) {
+        return api('delfriends', { name });
+    },
+    unlinkExercise(name) {
+        return api('delexercises', { name });
+    },
 }
