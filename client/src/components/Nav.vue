@@ -37,9 +37,6 @@
                         About
                      </router-link>
                     <a class="navbar-item">
-                        Jobs
-                    </a>
-                    <a class="navbar-item">
                         Contact
                     </a>
                     <hr class="navbar-divider">
@@ -54,12 +51,9 @@
     <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
-                <a class="button is-primary">
-                    <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                    Log in
-                </a>
+                <router-link class="button is-primary" to="/login" exact-active-class="active">
+                    <strong>Login</strong>
+                </router-link>
             </div>
         </div>
     </div>

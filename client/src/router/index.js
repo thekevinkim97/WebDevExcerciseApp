@@ -5,6 +5,7 @@ import Profile from '../views/Profile.vue';
 import Exercises from '../views/Exercises.vue';
 import AddFriend from '../views/AddFriend';
 import AddExercise from '../views/AddExercise';
+import Login from '../views/Login';
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,11 @@ const routes = [
     name: 'add-exercise',
     component: AddExercise,
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+  }
 ];
 
 const router = new VueRouter({
