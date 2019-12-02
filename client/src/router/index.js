@@ -10,6 +10,7 @@ import AddExercise from '../views/AddExercise';
 import DeleteFriend from '../views/DeleteFriend';
 import DeleteExercise from '../views/DeleteExercise';
 import Login from '../views/Login';
+import SignOut from '../views/SignOut';
 
 Vue.use(VueRouter);
 
@@ -69,6 +70,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
+  },
+  {
+    path: '/signout',
+    name: 'signout',
+    component: SignOut,
   }
 ];
 

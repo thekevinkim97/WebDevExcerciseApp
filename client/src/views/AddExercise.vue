@@ -27,7 +27,7 @@
                             </div>
                             <div class="control">
                                 <a class="button is-info" @click.prevent="join">
-                                Add Exercise
+                                Add Exercise Name
                                 </a>
                             </div>
                         </div>

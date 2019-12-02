@@ -10,11 +10,16 @@ export const Exercise_Server = {
         User.User_Id = current_id;
         $router.push( { name: 'profile' } );
     },
-    joinFriend(name) {
-        return api('addfriends', { name });
+   async RemoveUser() {
+        const { current_id } = await api('signout', { name });
+        User.User_Id = current_id;
+        $router.push( { name: 'profile' } );
+    },
+    joinFriend(name, sets, reps, max) {
+        return api('addfriends', { name, sets, reps, max });
     },
     joinExercise(name) {
-        return api('addexercises', { name });
+        return api('addexercises', { name, sets, reps, max });
     },
     unlinkFriend(name) {
         return api('delfriends', { name });

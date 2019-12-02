@@ -57,6 +57,15 @@
             </div>
         </div>
     </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="buttons">
+                <router-link class="button is-secondary" to="/signout" exact-active-class="active">
+                    <strong>Sign Out</strong>
+                </router-link>
+            </div>
+        </div>
+    </div>
 </nav>
 </template>
 

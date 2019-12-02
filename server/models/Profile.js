@@ -12,9 +12,17 @@ module.exports.Profile = {
         { name: "Vivian Chen" }, 
     ],
     Exercises:[
-        { name: "Bench Press", sets: 3, reps: 5},
-        { name: "Bicep Curl", sets: 3, reps: 10}
+        { name: "Bench Press", sets: 3, reps: 5, max: 155},
+        { name: "Bicep Curl", sets: 3, reps: 10, max: 35},
     ],
+    RemoveUser() {
+        if(this.User.find(x=> x.name == null)){
+            throw new CustomError(409, 'You are already signed out!');
+        } else {
+            this.User.pop();
+            return this.User.length - 1;
+        }
+    },
     JoinUser(name){
         if(this.User.find(x=> x.name != null)){
             throw new CustomError(409, 'You are already logged in');

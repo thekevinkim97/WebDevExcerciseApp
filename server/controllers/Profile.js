@@ -9,6 +9,11 @@ app.post('/user', (req, res) => {
     const current_id = Profile.JoinUser(req.body.name);
     res.send({ success: true, current_id });
 })
+app.post('/signout', (req, res) => {
+    Profile.RemoveUser();
+    const current_id = null;
+    res.send({ success: true, current_id });
+})
 app.post('/addfriends', (req, res)=>{
     const friend_id = Profile.JoinFriend(req.body.name);
     res.send({ success: true, friend_id });

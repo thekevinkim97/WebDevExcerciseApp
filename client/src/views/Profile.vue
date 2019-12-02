@@ -24,6 +24,9 @@
                 <li v-for="(p, i) in profile.Friends" :key="i" class="panel-block is-active">
                     {{p.name}}
                 </li>
+                <router-link class="button" to="/addfriend" exact-active-class="active">
+                    <strong>Add Friend</strong>
+                </router-link>
             </ul>
         </div>
        
