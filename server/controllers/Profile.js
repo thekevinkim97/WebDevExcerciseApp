@@ -19,7 +19,7 @@ app.post('/addfriends', (req, res)=>{
     res.send({ success: true, friend_id });
 } );
 app.post('/addexercises', (req, res)=>{
-    const exercise_id = Profile.JoinExercise(req.body.name);
+    const exercise_id = Profile.JoinExercise(req.body.name, req.body.sets, req.body.reps, req.body.max);
     res.send({ success: true, exercise_id });
 } );
 app.post('/delfriends', (req, res)=>{
@@ -31,11 +31,11 @@ app.post('/delexercises', (req, res)=>{
     res.send({ success: true, exercise_id });
 } );
 app.post('/weighty', (req, res)=>{
-    const weight_id = Profile.JoinWeight(req.body.name);
+    const weight_id = Profile.JoinWeight(req.body.lbs);
     res.send({ success: true, weight_id });
 } );
 app.post('/heighty', (req, res)=>{
-    const height_id = Profile.JoinHeight(req.body.name);
+    const height_id = Profile.JoinHeight(req.body.inch);
     res.send({ success: true, height_id });
 } );
 
