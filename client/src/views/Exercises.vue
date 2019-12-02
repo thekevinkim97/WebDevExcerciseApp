@@ -59,7 +59,7 @@ export default {
         profile: {}
     }), 
     async created() {
-        this.profile = await Exercise_Server.Get_State();
+        setInterval( async ()=> this.profile = await Exercise_Server.Get_State(), 2000 )
     }, 
     methods: {
         removeExercise(){
