@@ -21,7 +21,7 @@
                 <p class="panel-heading">
                     Your Friends
                 </p>
-                <li v-for="(p, i) in profile.Friends" :key="i" class="panel-block is-active">
+                <li v-for="(p, index) in profile.Friends" :key="index" class="panel-block is-active">
                     {{p.name}}
                 </li>
                 <router-link class="button" to="/addfriend" exact-active-class="active">
@@ -38,11 +38,11 @@
                     User Stats:
                 </p>
                 <li class="panel-block is-active">
-                    <li v-for="(p, i) in profile.Height" :key="i" class="panel-block is-active">
+                    <li v-for="(p, y) in profile.Height" :key="y" class="panel-block is-active">
                     {{p.inch}} inches tall
                 </li>
                 <li class="panel-block is-active">
-                    <li v-for="(p, i) in profile.Weight" :key="i" class="panel-block is-active">
+                    <li v-for="(p, s) in profile.Weight" :key="s" class="panel-block is-active">
                     {{p.lbs}} pounds
                 </li>
                 

@@ -4,8 +4,8 @@ module.exports.Profile = {
     User: [
         { name: null }
     ],
-    Weight: [{ lbs: "150" }],
-    Height: [{ inch: "63" }],
+    Weight: [{ lbs: 150 }],
+    Height: [{ inch: 63 }],
     Friends:[
         { name: "Chloe Ong" }, 
         { name: "Johnathan Kwan" }, 

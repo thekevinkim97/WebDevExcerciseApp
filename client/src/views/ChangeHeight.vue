@@ -12,7 +12,7 @@
                     <div class="field" :class="{ 'is-danger': error }">
                         <div class="field has-addons">
                             <div class="control has-icons-left has-icons-right">
-                                <input v-model="inch" class="input" type="text" placeholder="Height">
+                                <input v-model.number="inch" class="input" type="number" placeholder="Height">
 
                                 <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -48,7 +48,6 @@ export default {
     methods: {
         join(){
             Exercise_Server.joinHeight(this.inch)
-            .then(x=> this.$router.push( { inch: 'profile'} ) )
                 .catch(err=> {
                     console.error(err);
                     this.error = err.message;

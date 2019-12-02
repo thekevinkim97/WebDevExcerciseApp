@@ -29,9 +29,9 @@ export const Exercise_Server = {
     },
 
     joinWeight(lbs) {
-        return api('changeweight', { lbs });
+        return api('weighty', { lbs });
     },
     joinHeight(inch) {
-        return api('changeheight', { inch });
+        return api('heighty', { inch });
     },
 }

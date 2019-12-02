@@ -30,11 +30,11 @@ app.post('/delexercises', (req, res)=>{
     const exercise_id = Profile.UnlinkExercise(req.body.name);
     res.send({ success: true, exercise_id });
 } );
-app.post('/changeweight', (req, res)=>{
+app.post('/weighty', (req, res)=>{
     const weight_id = Profile.JoinWeight(req.body.name);
     res.send({ success: true, weight_id });
 } );
-app.post('/changeheight', (req, res)=>{
+app.post('/heighty', (req, res)=>{
     const height_id = Profile.JoinHeight(req.body.name);
     res.send({ success: true, height_id });
 } );
