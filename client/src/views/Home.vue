@@ -23,7 +23,7 @@
         <div class="tile is-parent">
           <article class="tile is-child notification is-info">
             <p class="title">Track your stats</p>
-            <p class="subtitle">Record your weight, height and age!</p>
+            <p class="subtitle">Record your weight and height!</p>
           </article>
           <article class="tile is-child notification is-warning">
             <p class="title">Add your friends</p>

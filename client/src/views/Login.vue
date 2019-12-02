@@ -1,11 +1,9 @@
 <template>
 <div>
-    <h1 class="is-size-1">
-        Your Name
-    </h1> 
-
+    <section class="hero is-medium is-dark is-bold">
+    <div class="hero-body">
     <div class="columns">
-        <div class="column is-one-third is-offset-one-third">
+        <div class="column is-half is-offset-one-third">
 
             <ul class="panel">
                 <p class="panel-heading">
@@ -38,6 +36,8 @@
             </ul>
         </div>
     </div>
+    </div>
+    </section>
 </div>
 
 </template>

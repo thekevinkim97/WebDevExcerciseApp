@@ -14,6 +14,7 @@ module.exports.Profile = {
     Exercises:[
         { name: "Bench Press", sets: 3, reps: 5, max: 155},
         { name: "Bicep Curl", sets: 3, reps: 10, max: 35},
+        { name: "Barbell Lunges", sets: 4, reps: 12, max: 120},
     ],
 
     RemoveUser() {
