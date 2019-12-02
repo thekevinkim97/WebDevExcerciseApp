@@ -42,15 +42,14 @@
 import { Exercise_Server } from "../models/Profile";
 export default {
     data: ()=>({
-        lbs: "",
+        lbs: 0,
         error: ""
     }),
     methods: {
         join(){
             Exercise_Server.joinWeight(this.lbs)
+            .then(x=> this.router.push( { lbs: 'profile'} ) )
                 .catch(err=> {
-                    console.error(err);
-                    this.error = err.message;
                 });
         }
     }

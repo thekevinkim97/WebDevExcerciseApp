@@ -42,15 +42,14 @@
 import { Exercise_Server } from "../models/Profile";
 export default {
     data: ()=>({
-        inch: "",
+        inch: 0,
         error: ""
     }),
     methods: {
         join(){
             Exercise_Server.joinHeight(this.inch)
+            .then(x=> this.$router.push( { inch: 'profile'} ) )
                 .catch(err=> {
-                    console.error(err);
-                    this.error = err.message;
                 });
         }
     }
