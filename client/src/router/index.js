@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import { User } from "../models/my-fetch";
+
 import Home from '../views/Home.vue';
 import Profile from '../views/Profile.vue';
 import Exercises from '../views/Exercises.vue';
@@ -21,11 +23,27 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: Profile,
+
+    beforeEnter: (to, from, next) => {
+      if(User.User_Id == null) {
+        next( { name: "login" } )
+      } else {
+        next();
+      }
+    }
   },
   {
     path: '/exercises',
     name: 'exercises',
     component: Exercises,
+    
+    beforeEnter: (to, from, next) => {
+      if(User.User_Id == null) {
+        next( { name: "login" } )
+      } else {
+        next();
+      }
+    }
   },
   {
     path: '/addfriend',

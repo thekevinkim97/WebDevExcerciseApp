@@ -10,11 +10,11 @@
                 <p class="panel-heading">
                     User
                 </p>
-                <li class="panel-block is-active">
+                <li v-for="(p, i) in profile.User" :key="i" class="panel-block is-active">
                     <span class="panel-icon">
                         <i class="fas fa-user" aria-hidden="true"></i>
                     </span>
-                    {{profile.Name}}
+                    {{p.name}}
                 </li>
             </ul>
             <ul class="panel">
@@ -36,7 +36,7 @@
 import { Exercise_Server } from "../models/Profile";
 export default {
     data: ()=> ({
-        profile: {}
+        profile: {},
     }),
     async created() {
         setInterval( async ()=> this.profile = await Exercise_Server.Get_State(), 2000 )

@@ -1,7 +1,7 @@
 <template>
 <div>
     <h1 class="is-size-1">
-        Add Friend
+        Your Name
     </h1> 
 
     <div class="columns">
@@ -9,7 +9,7 @@
 
             <ul class="panel">
                 <p class="panel-heading">
-                    Add Friend
+                    Login
                 </p>
                 <div class="panel-block">
 
@@ -27,7 +27,7 @@
                             </div>
                             <div class="control">
                                 <a class="button is-info" @click.prevent="join">
-                                Add Friend
+                                Your Name
                                 </a>
                             </div>
                         </div>
@@ -51,8 +51,7 @@ export default {
     }),
     methods: {
         join(){
-            Exercise_Server.joinFriend(this.name)
-            .then(x=> this.$router.push( { name: 'profile'} ) )
+            Exercise_Server.JoinUser(this.name)
                 .catch(err=> {
                     console.error(err);
                     this.error = err.message;
