@@ -15,10 +15,10 @@ export const Exercise_Server = {
         User.User_Id = current_id;
         $router.push( { name: 'profile' } );
     },
-    joinFriend(name, sets, reps, max) {
-        return api('addfriends', { name, sets, reps, max });
+    joinFriend(name) {
+        return api('addfriends', { name });
     },
-    joinExercise(name) {
+    joinExercise(name, sets, reps, max) {
         return api('addexercises', { name, sets, reps, max });
     },
     unlinkFriend(name) {

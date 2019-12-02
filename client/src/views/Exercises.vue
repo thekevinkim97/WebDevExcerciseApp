@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <th>
-                    <router-link class="button" to="/addexercise" exact-active-class="active">
+                    <router-link class="button" to="/addexercises" exact-active-class="active">
                         <strong>Add Exercise</strong>
                     </router-link>
                 </th>

@@ -39,11 +39,11 @@ module.exports.Profile = {
         this.Friends.push({ name });
         return this.Friends.length - 1;
     },
-    JoinExercise(name){
+    JoinExercise(name, sets, reps, max){
         if(this.Exercises.find(x=> x.name == name )){
             throw new CustomError(409, 'You already have this exercise');
         }
-        this.Exercises.push({ name });
+        this.Exercises.push({ name, sets, reps, max });
         return this.Exercises.length - 1;
     },
     UnlinkFriend(name){

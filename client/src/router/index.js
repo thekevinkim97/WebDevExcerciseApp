@@ -52,12 +52,12 @@ const routes = [
     component: AddFriend,
   },
   {
-    path: '/addexercise',
+    path: '/addexercises',
     name: 'add-exercise',
     component: AddExercise,
   },
   {
-    path: '/deleteexercise',
+    path: '/deleteexercises',
     name: 'delete-exercise',
     component: DeleteExercise,
   },
