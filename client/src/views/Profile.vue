@@ -1,11 +1,11 @@
 <template>
 <div>
     <h1 class="is-size-1">
-        This is the Profile Page
+        User Profile
     </h1> 
 
     <div class="columns">
-        <div class="column is-one-quarter">
+        <div class="column is-one-third">
             <ul class="panel">
                 <p class="panel-heading">
                     User
@@ -26,6 +26,28 @@
                 </li>
                 <router-link class="button" to="/addfriend" exact-active-class="active">
                     <strong>Add Friend</strong>
+                </router-link>
+            </ul>
+        </div>
+       <div class="column is-one-third">
+            <ul class="panel">
+                <p class="panel-heading">
+                    User Stats:
+                </p>
+                <li class="panel-block is-active">
+                    <li v-for="(p, i) in profile.Height" :key="i" class="panel-block is-active">
+                    {{p.inch}} inches tall
+                </li>
+                <li class="panel-block is-active">
+                    <li v-for="(p, i) in profile.Weight" :key="i" class="panel-block is-active">
+                    {{p.lbs}} pounds
+                </li>
+                
+                <router-link class="button" to="/changeweight" exact-active-class="active">
+                    <strong>Change Weight</strong>
+                </router-link>
+                <router-link class="button" to="/changeheight" exact-active-class="active">
+                    <strong>Change Height</strong>
                 </router-link>
             </ul>
         </div>

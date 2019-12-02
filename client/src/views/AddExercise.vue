@@ -16,7 +16,7 @@
                     <div class="field" :class="{ 'is-danger': error }">
                         <div class="field has-addons">
                             <div class="control has-icons-left has-icons-right">
-                                <input v-model = "name" class="input" type="text" placeholder="Name">
+                                <input v-model = "name" class="input" type="text" placeholder="Exercise Name">
 
                                 <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -24,11 +24,6 @@
                                 <span class="icon is-small is-right">
                                 <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                            </div>
-                            <div class="control">
-                                <a class="button is-info">
-                                Add Exercise Name
-                                </a>
                             </div>
                         </div>
                         <p class="help is-danger">{{error}}</p>
@@ -39,7 +34,7 @@
                     <div class="field" :class="{ 'is-danger': error }">
                         <div class="field has-addons">
                             <div class="control has-icons-left has-icons-right">
-                                <input v-model="sets" class="input" type="number" placeholder="Number of Sets">
+                                <input v-model.number ="sets" class="input" type="number" placeholder="Number of Sets">
 
                                 <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -47,11 +42,6 @@
                                 <span class="icon is-small is-right">
                                 <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                            </div>
-                            <div class="control">
-                                <a class="button is-info">
-                                Sets
-                                </a>
                             </div>
                         </div>
                         <p class="help is-danger">{{error}}</p>
@@ -62,7 +52,7 @@
                     <div class="field" :class="{ 'is-danger': error }">
                         <div class="field has-addons">
                             <div class="control has-icons-left has-icons-right">
-                                <input v-model="reps" class="input" type="number" placeholder="Number of Reps">
+                                <input v-model.number="reps" class="input" type="number" placeholder="Number of Reps">
 
                                 <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -70,11 +60,6 @@
                                 <span class="icon is-small is-right">
                                 <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                            </div>
-                            <div class="control">
-                                <a class="button is-info">
-                                Reps
-                                </a>
                             </div>
                         </div>
                         <p class="help is-danger">{{error}}</p>
@@ -85,7 +70,7 @@
                     <div class="field" :class="{ 'is-danger': error }">
                         <div class="field has-addons">
                             <div class="control has-icons-left has-icons-right">
-                                <input v-model="max" class="input" type="number" placeholder="Max Amount of Weight">
+                                <input v-model.number="max" class="input" type="number" placeholder="Max Amount of Weight">
 
                                 <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -93,11 +78,6 @@
                                 <span class="icon is-small is-right">
                                 <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                            </div>
-                            <div class="control">
-                                <a class="button is-info">
-                                Max Weight
-                                </a>
                             </div>
                         </div>
                         <p class="help is-danger">{{error}}</p>
@@ -129,15 +109,15 @@ import { Exercise_Server } from "../models/Profile";
 export default {
     data: ()=>({
         name: "",
-        sets: "",
-        reps: "",
-        max: "",
+        sets: 0,
+        reps: 0,
+        max: 0,
         error: ""
     }),
     methods: {
         submit(){
-            Exercise_Server.joinExercise(this.name,this.sets,this.reps,this.max)
-            .then(x=> this.$router.push( { name: 'exercises'} ) )
+            Exercise_Server.joinExercise(this.name, this.sets, this.reps, this.max)
+            .then(x=> this.$router.push( { name: 'name', sets:'sets', reps: 'reps', max: 'max'} ) )
                 .catch(err=> {
                     console.error(err);
                     this.error = err.message;

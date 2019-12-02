@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import { User } from "../models/my-fetch";
 
 import Home from '../views/Home.vue';
+import About from '../views/About.vue';
 import Profile from '../views/Profile.vue';
 import Exercises from '../views/Exercises.vue';
 import AddFriend from '../views/AddFriend';
@@ -12,6 +13,9 @@ import DeleteExercise from '../views/DeleteExercise';
 import Login from '../views/Login';
 import SignOut from '../views/SignOut';
 
+import ChangeWeight from '../views/ChangeWeight'
+import ChangeHeight from '../views/ChangeHeight'
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -19,6 +23,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: About,
   },
   {
     path: '/profile',
@@ -75,7 +84,17 @@ const routes = [
     path: '/signout',
     name: 'signout',
     component: SignOut,
-  }
+  },
+  {
+    path: '/changeweight',
+    name: 'changeheight',
+    component: ChangeWeight,
+  },
+  {
+    path: '/changeheight',
+    name: 'changeheight',
+    component: ChangeHeight,
+  },
 ];
 
 const router = new VueRouter({

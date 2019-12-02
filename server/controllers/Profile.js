@@ -30,6 +30,13 @@ app.post('/delexercises', (req, res)=>{
     const exercise_id = Profile.UnlinkExercise(req.body.name);
     res.send({ success: true, exercise_id });
 } );
-
+app.post('/changeweight', (req, res)=>{
+    const weight_id = Profile.ChangeWeight(req.body.name);
+    res.send({ success: true, weight_id });
+} );
+app.post('/changeheight', (req, res)=>{
+    const height_id = Profile.ChangeHeight(req.body.name);
+    res.send({ success: true, height_id });
+} );
 
 module.exports=app;

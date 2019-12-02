@@ -19,12 +19,19 @@ export const Exercise_Server = {
         return api('addfriends', { name });
     },
     joinExercise(name, sets, reps, max) {
-        return api('addexercises', { name, sets, reps, max });
+        return api('addexercises', { name }, { sets }, { reps }, { max } );
     },
     unlinkFriend(name) {
         return api('delfriends', { name });
     },
     unlinkExercise(name) {
         return api('delexercises', { name });
+    },
+
+    changeWeight(weight) {
+        return api('changeweight', { weight });
+    },
+    changeHeight(height) {
+        return api('changeheight', { height });
     },
 }

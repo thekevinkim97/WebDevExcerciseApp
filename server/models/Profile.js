@@ -4,8 +4,8 @@ module.exports.Profile = {
     User: [
         { name: null }
     ],
-    Weight: 150,
-    Height: 63,
+    Weight: [{ lbs: "150" }],
+    Height: [{ inch: "63" }],
     Friends:[
         { name: "Chloe Ong" }, 
         { name: "Johnathan Kwan" }, 
@@ -15,6 +15,7 @@ module.exports.Profile = {
         { name: "Bench Press", sets: 3, reps: 5, max: 155},
         { name: "Bicep Curl", sets: 3, reps: 10, max: 35},
     ],
+
     RemoveUser() {
         if(this.User.find(x=> x.name == null)){
             throw new CustomError(409, 'You are already signed out!');
@@ -60,6 +61,18 @@ module.exports.Profile = {
         }
         throw new CustomError(409, 'You do not have this exercise');
     },
+
+    ChangeWeight(weight){
+        this.Weight.push({weight});
+        return this.Weight.length - 1;
+        
+    },
+    ChangeHeight(height){
+        this.Height.push({height});
+        return this.Height.length - 1;
+        
+    },
+
     Get_State() {
         return {
             User: this.User,

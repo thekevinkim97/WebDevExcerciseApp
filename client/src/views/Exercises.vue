@@ -4,6 +4,7 @@
         This is the Exercise Page
     </h1> 
     
+
     <table class="table">
         <thead>
             <tr>
