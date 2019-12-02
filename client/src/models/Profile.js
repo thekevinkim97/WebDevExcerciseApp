@@ -28,10 +28,10 @@ export const Exercise_Server = {
         return api('delexercises', { name });
     },
 
-    changeWeight(weight) {
-        return api('changeweight', { weight });
+    joinWeight(lbs) {
+        return api('changeweight', { lbs });
     },
-    changeHeight(height) {
-        return api('changeheight', { height });
+    joinHeight(inch) {
+        return api('changeheight', { inch });
     },
 }

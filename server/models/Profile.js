@@ -47,28 +47,24 @@ module.exports.Profile = {
         this.Exercises.push({ name, sets, reps, max });
         return this.Exercises.length - 1;
     },
-    UnlinkFriend(name){
-        if(this.Friends.find(x=> x.name == name )){
-            this.Friends.pop({ name });
-            return this.Friends.length - 1;
-        }
-        throw new CustomError(409, 'You do not have a friend with that name');
+    UnlinkFriend(){
+        this.Friends.pop({});
+        return this.Friends.length - 1;
     },
-    UnlinkExercise(name){
-        if(this.Exercises.find(x=> x.name == name )){
-            this.Exercises.pop({ name });
-            return this.Exercises.length - 1;
-        }
-        throw new CustomError(409, 'You do not have this exercise');
+    UnlinkExercise(){
+        this.Exercises.pop({});
+        return this.Exercises.length - 1;
     },
 
-    ChangeWeight(weight){
-        this.Weight.push({weight});
+    JoinWeight(lbs){
+        this.Weight.pop();
+        this.Weight.push({lbs});
         return this.Weight.length - 1;
         
     },
-    ChangeHeight(height){
-        this.Height.push({height});
+    JoinHeight(inch){
+        this.Height.pop();
+        this.Height.push({inch});
         return this.Height.length - 1;
         
     },

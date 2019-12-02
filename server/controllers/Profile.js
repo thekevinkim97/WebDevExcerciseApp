@@ -31,11 +31,11 @@ app.post('/delexercises', (req, res)=>{
     res.send({ success: true, exercise_id });
 } );
 app.post('/changeweight', (req, res)=>{
-    const weight_id = Profile.ChangeWeight(req.body.name);
+    const weight_id = Profile.JoinWeight(req.body.name);
     res.send({ success: true, weight_id });
 } );
 app.post('/changeheight', (req, res)=>{
-    const height_id = Profile.ChangeHeight(req.body.name);
+    const height_id = Profile.JoinHeight(req.body.name);
     res.send({ success: true, height_id });
 } );
 

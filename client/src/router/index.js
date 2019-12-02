@@ -8,8 +8,7 @@ import Profile from '../views/Profile.vue';
 import Exercises from '../views/Exercises.vue';
 import AddFriend from '../views/AddFriend';
 import AddExercise from '../views/AddExercise';
-import DeleteFriend from '../views/DeleteFriend';
-import DeleteExercise from '../views/DeleteExercise';
+
 import Login from '../views/Login';
 import SignOut from '../views/SignOut';
 
@@ -65,16 +64,7 @@ const routes = [
     name: 'add-exercise',
     component: AddExercise,
   },
-  {
-    path: '/deleteexercises',
-    name: 'delete-exercise',
-    component: DeleteExercise,
-  },
-  {
-    path: '/deletefriend',
-    name: 'delete-friend',
-    component: DeleteFriend,
-  },
+  
   {
     path: '/login',
     name: 'login',
@@ -86,13 +76,13 @@ const routes = [
     component: SignOut,
   },
   {
-    path: '/changeweight',
-    name: 'changeheight',
+    path: '/changetheweight',
+    name: 'change-Weight',
     component: ChangeWeight,
   },
   {
-    path: '/changeheight',
-    name: 'changeheight',
+    path: '/changetheheight',
+    name: 'change-height',
     component: ChangeHeight,
   },
 ];

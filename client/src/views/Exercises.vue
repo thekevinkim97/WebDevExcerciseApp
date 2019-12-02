@@ -42,6 +42,9 @@
                     <router-link class="button" to="/addexercises" exact-active-class="active">
                         <strong>Add Exercise</strong>
                     </router-link>
+                <a class="button" exact-active-class="active" @click.prevent="removeExercise">
+                        <strong>Remove Recent Workout</strong>
+                </a>
                 </th>
             </tr>
         </tbody>
@@ -58,5 +61,15 @@ export default {
     async created() {
         this.profile = await Exercise_Server.Get_State();
     }, 
+    methods: {
+        removeExercise(){
+            Exercise_Server.unlinkExercise()
+            .then(x=> this.$router.push( { } ) )
+                .catch(err=> {
+                    console.error(err);
+                    this.error = err.message;
+                });
+        },
+    }
 }
 </script>

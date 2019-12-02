@@ -27,6 +27,9 @@
                 <router-link class="button" to="/addfriend" exact-active-class="active">
                     <strong>Add Friend</strong>
                 </router-link>
+                <a class="button" exact-active-class="active" @click.prevent="removeFriend">
+                    <strong>Remove Recent Friend</strong>
+                </a>
             </ul>
         </div>
        <div class="column is-one-third">
@@ -43,10 +46,10 @@
                     {{p.lbs}} pounds
                 </li>
                 
-                <router-link class="button" to="/changeweight" exact-active-class="active">
+                <router-link class="button" to="/changetheweight" exact-active-class="active">
                     <strong>Change Weight</strong>
                 </router-link>
-                <router-link class="button" to="/changeheight" exact-active-class="active">
+                <router-link class="button" to="/changetheheight" exact-active-class="active">
                     <strong>Change Height</strong>
                 </router-link>
             </ul>
@@ -69,7 +72,15 @@ export default {
     methods: {
         userClicked() {
             this.Profile.User_Photo_Show = Exercise_Server.Get_User_Photo();
-        }
+        },
+        removeFriend(){
+            Exercise_Server.unlinkFriend()
+            .then(x=> this.$router.push( { } ) )
+                .catch(err=> {
+                    console.error(err);
+                    this.error = err.message;
+                });
+        },
     }
 }
 </script>

@@ -12,7 +12,7 @@
                     <div class="field" :class="{ 'is-danger': error }">
                         <div class="field has-addons">
                             <div class="control has-icons-left has-icons-right">
-                                <input v-model.number="weight" class="input" type="number" placeholder="Weight">
+                                <input v-model="lbs" class="input" type="text" placeholder="Weight">
 
                                 <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
@@ -42,13 +42,13 @@
 import { Exercise_Server } from "../models/Profile";
 export default {
     data: ()=>({
-        weight: 0,
+        lbs: "",
         error: ""
     }),
     methods: {
         join(){
-            Exercise_Server.changeWeight(this.weight)
-            .then(x=> this.$router.push( { weight: 'profile'} ) )
+            Exercise_Server.joinWeight(this.lbs)
+            .then(x=> this.$router.push( { lbs: 'profile'} ) )
                 .catch(err=> {
                     console.error(err);
                     this.error = err.message;
