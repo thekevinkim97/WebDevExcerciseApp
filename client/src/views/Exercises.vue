@@ -36,15 +36,19 @@
                         {{p.max}}
                     </li>
                 </th>
+                <td>
+                    <li v-for="(p, i) in profile.Exercises" :key="i" class="panel-block is-active">
+                        <button @click="deleteExercise(index)">
+                            delete
+                        </button>
+                    </li>
+                </td>
             </tr>
             <tr>
                 <th>
                     <router-link class="button" to="/addexercises" exact-active-class="active">
                         <strong>Add Exercise</strong>
                     </router-link>
-                <a class="button" exact-active-class="active" @click.prevent="removeExercise">
-                        <strong>Remove Recent Workout</strong>
-                </a>
                 </th>
             </tr>
         </tbody>
@@ -62,13 +66,8 @@ export default {
         setInterval( async ()=> this.profile = await Exercise_Server.Get_State(), 2000 )
     }, 
     methods: {
-        removeExercise(){
-            Exercise_Server.unlinkExercise()
-            .then(x=> this.$router.push( { path: 'exercises'} ) )
-                .catch(err=> {
-                    console.error(err);
-                    this.error = err.message;
-                });
+        deleteExercise(index){
+            Exercise_Server.unlinkExercise(index)
         },
     }
 }

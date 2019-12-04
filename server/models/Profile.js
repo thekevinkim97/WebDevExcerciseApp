@@ -53,6 +53,10 @@ module.exports.Profile = {
         this.Friends.splice(index, 1);
         return this.Friends.length - 1;
     },
+    UnlinkExercise(index){
+        this.Exercises.splice(index, 1);
+        return this.Exercises.length - 1;
+    },
 
     JoinWeight(lbs){
         this.Weight.pop();

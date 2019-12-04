@@ -23,7 +23,7 @@
                 </p>
                 <li v-for="(p, index) in profile.Friends" :key="index" class="panel-block is-active">
                     {{p.name}} 
-                    <button @click="deleteFriend(profile.Friends, index)">
+                    <button @click="deleteFriend(index)">
                         delete
                     </button>
                 </li>
@@ -70,11 +70,9 @@ export default {
         setInterval( async ()=> this.profile = await Exercise_Server.Get_State(), 2000 )
     }, 
     methods: {
-        deleteFriend(Friends, index) {
-            console.log(Friends)
+        deleteFriend(index) {
             Exercise_Server.unlinkFriend(index)
-            Friends.splice(index, 1);
-            console.log(Friends)
+            //Friends.splice(index, 1);
         },
     }
 }

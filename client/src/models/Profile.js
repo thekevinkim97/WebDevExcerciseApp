@@ -19,13 +19,14 @@ export const Exercise_Server = {
         return api('addfriends', { name });
     },
     joinExercise(name, sets, reps, max) {
-        return api('addexercises', { name }, { sets }, { reps }, { max } );
+        return api('addexercises', { name, sets, reps, max});
     },
+
     unlinkFriend(index) {
         return api('delfriends', { index });
     },
-    unlinkExercise(name) {
-        return api('delexercises', { name });
+    unlinkExercise(index) {
+        return api('delexercises', { index });
     },
 
     joinWeight(lbs) {
