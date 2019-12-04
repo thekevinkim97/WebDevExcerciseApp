@@ -19,7 +19,7 @@
                 <th>
                     <li v-for="(p, i) in profile.Exercises" :key="i" class="panel-block is-active">
                         {{p.name}}
-                </li>
+                    </li>
                 </th>
                 <td>
                     <li v-for="(p, i) in profile.Exercises" :key="i" class="panel-block is-active">

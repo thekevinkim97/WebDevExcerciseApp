@@ -88,7 +88,7 @@
                     <div class="field" :class="{ 'is-danger': error }">
                         <div class="field has-addons">
                             <div class="control">
-                                <a class="button is-info" @click.prevent="submit">
+                                <a class="button is-info" @click="submit">
                                 Submit
                                 </a>
                             </div>
@@ -116,9 +116,8 @@ export default {
     }),
     methods: {
         submit(){
-            //add debugger here
             Exercise_Server.joinExercise(this.name, this.sets, this.reps, this.max)
-            .then(x=> this.$router.push( {path: 'exercises' } ) )
+            .then(x=> this.$router.push( {name: 'exercises' } ) )
                 .catch(err=> {
                     console.error(err);
                     this.error = err.message;
