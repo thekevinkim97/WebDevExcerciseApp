@@ -37,7 +37,7 @@
                     </li>
                 </th>
                 <td>
-                    <li v-for="(p, i) in profile.Exercises" :key="i" class="panel-block is-active">
+                    <li v-for="(p, index) in profile.Exercises" :key="index" class="panel-block is-active">
                         <button @click="deleteExercise(index)">
                             delete
                         </button>
