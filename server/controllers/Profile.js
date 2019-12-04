@@ -23,7 +23,7 @@ app.post('/addexercises', (req, res)=>{
     res.send({ success: true, exercise_id });
 } );
 app.post('/delfriends', (req, res)=>{
-    const friend_id = Profile.UnlinkFriend(req.body.name);
+    const friend_id = Profile.UnlinkFriend(req.body.index);
     res.send({ success: true, friend_id });
 } );
 app.post('/delexercises', (req, res)=>{

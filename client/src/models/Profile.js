@@ -21,8 +21,8 @@ export const Exercise_Server = {
     joinExercise(name, sets, reps, max) {
         return api('addexercises', { name }, { sets }, { reps }, { max } );
     },
-    unlinkFriend(name) {
-        return api('delfriends', { name });
+    unlinkFriend(index) {
+        return api('delfriends', { index });
     },
     unlinkExercise(name) {
         return api('delexercises', { name });

@@ -64,7 +64,7 @@ export default {
     methods: {
         removeExercise(){
             Exercise_Server.unlinkExercise()
-            .then(x=> this.$router.push( { } ) )
+            .then(x=> this.$router.push( { path: 'exercises'} ) )
                 .catch(err=> {
                     console.error(err);
                     this.error = err.message;

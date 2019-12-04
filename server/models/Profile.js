@@ -48,13 +48,10 @@ module.exports.Profile = {
         this.Exercises.push({ name, sets, reps, max });
         return this.Exercises.length - 1;
     },
-    UnlinkFriend(){
-        this.Friends.pop({});
+
+    UnlinkFriend(index){
+        this.Friends.splice(index, 1);
         return this.Friends.length - 1;
-    },
-    UnlinkExercise(){
-        this.Exercises.pop({});
-        return this.Exercises.length - 1;
     },
 
     JoinWeight(lbs){

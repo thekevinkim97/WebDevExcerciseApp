@@ -54,6 +54,7 @@ const routes = [
       }
     }
   },
+
   {
     path: '/addfriend',
     name: 'add-friend',
@@ -64,7 +65,7 @@ const routes = [
     name: 'add-exercise',
     component: AddExercise,
   },
-  
+
   {
     path: '/login',
     name: 'login',

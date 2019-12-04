@@ -22,14 +22,14 @@
                     Your Friends
                 </p>
                 <li v-for="(p, index) in profile.Friends" :key="index" class="panel-block is-active">
-                    {{p.name}}
+                    {{p.name}} 
+                    <button @click="deleteFriend(profile.Friends, index)">
+                        delete
+                    </button>
                 </li>
                 <router-link class="button" to="/addfriend" exact-active-class="active">
                     <strong>Add Friend</strong>
                 </router-link>
-                <a class="button" exact-active-class="active" @click.prevent="removeFriend">
-                    <strong>Remove Recent Friend</strong>
-                </a>
             </ul>
         </div>
        <div class="column is-one-third">
@@ -70,16 +70,11 @@ export default {
         setInterval( async ()=> this.profile = await Exercise_Server.Get_State(), 2000 )
     }, 
     methods: {
-        userClicked() {
-            this.Profile.User_Photo_Show = Exercise_Server.Get_User_Photo();
-        },
-        removeFriend(){
-            Exercise_Server.unlinkFriend()
-            .then(x=> this.$router.push( { } ) )
-                .catch(err=> {
-                    console.error(err);
-                    this.error = err.message;
-                });
+        deleteFriend(Friends, index) {
+            console.log(Friends)
+            Exercise_Server.unlinkFriend(index)
+            Friends.splice(index, 1);
+            console.log(Friends)
         },
     }
 }
