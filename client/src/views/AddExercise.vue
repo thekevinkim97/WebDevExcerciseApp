@@ -116,8 +116,9 @@ export default {
     }),
     methods: {
         submit(){
+            //add debugger here
             Exercise_Server.joinExercise(this.name, this.sets, this.reps, this.max)
-            .then(x=> this.$router.push( { name: 'name', sets:'sets', reps: 'reps', max: 'max'} ) )
+            .then(x=> this.$router.push( {path: 'exercises' } ) )
                 .catch(err=> {
                     console.error(err);
                     this.error = err.message;

@@ -48,7 +48,7 @@ export default {
     methods: {
         join(){
             Exercise_Server.joinWeight(this.lbs)
-            .then(x=> this.router.push( { lbs: 'profile'} ) )
+            .then(x=> this.$router.push( { path: 'profile'} ) )
                 .catch(err=> {
                 });
         }

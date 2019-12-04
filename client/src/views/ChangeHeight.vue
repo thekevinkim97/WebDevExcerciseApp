@@ -48,7 +48,7 @@ export default {
     methods: {
         join(){
             Exercise_Server.joinHeight(this.inch)
-            .then(x=> this.$router.push( { inch: 'profile'} ) )
+            .then(x=> this.$router.push( { path: 'profile'} ) )
                 .catch(err=> {
                 });
         }
