@@ -27,9 +27,30 @@
                         delete
                     </button>
                 </li>
-                <router-link class="button" to="/addfriend" exact-active-class="active">
-                    <strong>Add Friend</strong>
-                </router-link>
+                
+                <div class="field" :class="{ 'is-danger': error }">
+                        <div class="field has-addons">
+                            <div class="control has-icons-left has-icons-right">
+                                <input v-model="name" class="input" type="text" placeholder="Name">
+
+                                <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="help is-danger">{{error}}</p>
+                </div>
+
+
+                <div class="control">
+                    <a class="button is-info" @click.prevent="join">
+                            Add Friend
+                    </a>
+                </div>
+
             </ul>
         </div>
        <div class="column is-one-third">
@@ -40,18 +61,20 @@
                 <li class="panel-block is-active">
                     <li v-for="(p, y) in profile.Height" :key="y" class="panel-block is-active">
                     {{p.inch}} inches tall
+
+                    <router-link class="button" to="/changetheheight" exact-active-class="active">
+                        Change Height
+                    </router-link>
                 </li>
                 <li class="panel-block is-active">
                     <li v-for="(p, s) in profile.Weight" :key="s" class="panel-block is-active">
                     {{p.lbs}} pounds
+                    
+                    <router-link class="button" to="/changetheweight" exact-active-class="active">
+                        Change Weight
+                    </router-link>
                 </li>
                 
-                <router-link class="button" to="/changetheweight" exact-active-class="active">
-                    <strong>Change Weight</strong>
-                </router-link>
-                <router-link class="button" to="/changetheheight" exact-active-class="active">
-                    <strong>Change Height</strong>
-                </router-link>
             </ul>
         </div>
        
@@ -65,6 +88,8 @@ import { Exercise_Server } from "../models/Profile";
 export default {
     data: ()=> ({
         profile: {},
+        friend: "",
+        error: ""
     }),
     async created() {
         setInterval( async ()=> this.profile = await Exercise_Server.Get_State(), 2000 )
@@ -74,6 +99,13 @@ export default {
             Exercise_Server.unlinkFriend(index)
             //Friends.splice(index, 1);
         },
+        join(){
+            Exercise_Server.joinFriend(this.name)
+                .catch(err=> {
+                    console.error(err);
+                    this.error = err.message;
+                });
+        }
     }
 }
 </script>

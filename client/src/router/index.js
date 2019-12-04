@@ -6,8 +6,6 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Profile from '../views/Profile.vue';
 import Exercises from '../views/Exercises.vue';
-import AddFriend from '../views/AddFriend';
-import AddExercise from '../views/AddExercise';
 
 import Login from '../views/Login';
 import SignOut from '../views/SignOut';
@@ -53,17 +51,6 @@ const routes = [
         next();
       }
     }
-  },
-
-  {
-    path: '/addfriend',
-    name: 'add-friend',
-    component: AddFriend,
-  },
-  {
-    path: '/addexercises',
-    name: 'add-exercise',
-    component: AddExercise,
   },
 
   {
