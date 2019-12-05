@@ -6,8 +6,13 @@
             Home
         </router-link>
 
+        <router-link exact-active-class="active" class="navbar-item" to="/profile">
+                <i class="fa fa-id-badge fa-pull-left"></i>
+                    Profile
+            </router-link>
+
         <router-link exact-active-class="active" class="navbar-item" to="/exercises">
-            <i class="fas fa-home fa-pull-left"></i>
+            <i class="fas fa-bullhorn fa-pull-left"></i>
             Exercises
         </router-link>
 
@@ -21,9 +26,9 @@
     <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active' : isOpen }">
         <div class="navbar-start">
 
-            <router-link exact-active-class="active" class="navbar-item" to="/profile">
-                <i class="fas fa-ghost fa-pull-left"></i>
-                    Profile
+            <router-link exact-active-class="active" class="navbar-item" to="/mealplan">
+                <i class="fas fa-hamburger fa-pull-left"></i>
+                    Meal Plan
             </router-link>
 
             <div class="navbar-item has-dropdown is-hoverable">
@@ -36,9 +41,6 @@
                         <i class="fab fa-vuejs fa-pull-left"></i>
                         About
                      </router-link>
-                    <a class="navbar-item">
-                        Contact
-                    </a>
                     <hr class="navbar-divider">
                     <a class="navbar-item">
                         Report an issue

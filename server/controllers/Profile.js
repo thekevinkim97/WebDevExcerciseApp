@@ -23,6 +23,10 @@ app.post('/addexercises', (req, res)=>{
     const exercise_id = Profile.JoinExercise(req.body.name, req.body.sets, req.body.reps, req.body.max);
     res.send({ success: true, exercise_id });
 } );
+app.post('/addfoods', (req, res)=>{
+    const food_id = Profile.JoinFood(req.body.name, req.body.calories, req.body.servings);
+    res.send({ success: true, food_id });
+} );
 
 app.post('/delfriends', (req, res)=>{
     const friend_id = Profile.UnlinkFriend(req.body.index);
@@ -31,6 +35,10 @@ app.post('/delfriends', (req, res)=>{
 app.post('/delexercises', (req, res)=>{
     const exercise_id = Profile.UnlinkExercise(req.body.index);
     res.send({ success: true, exercise_id });
+} );
+app.post('/delfoods', (req, res)=>{
+    const food_id = Profile.UnlinkFood(req.body.index);
+    res.send({ success: true, food_id });
 } );
 
 app.post('/weighty', (req, res)=>{

@@ -16,6 +16,10 @@ module.exports.Profile = {
         { name: "Bicep Curl", sets: 3, reps: 10, max: 35},
         { name: "Barbell Lunges", sets: 4, reps: 12, max: 120},
     ],
+    Meals:[
+        { name: "French Fries", calories: 300, servings: 2},
+        { name: "Chicken Tenders", calories: 600, servings: 1},
+    ],
 
     RemoveUser() {
         if(this.User.find(x=> x.name == null)){
@@ -48,6 +52,13 @@ module.exports.Profile = {
         this.Exercises.push({ name, sets, reps, max });
         return this.Exercises.length - 1;
     },
+    JoinFood(name, calories, servings){
+        if(this.Meals.find(x=> x.name == name )){
+            throw new CustomError(409, 'You already have this food item');
+        }
+        this.Meals.push({ name, calories, servings});
+        return this.Meals.length - 1;
+    },
 
     UnlinkFriend(index){
         this.Friends.splice(index, 1);
@@ -56,6 +67,10 @@ module.exports.Profile = {
     UnlinkExercise(index){
         this.Exercises.splice(index, 1);
         return this.Exercises.length - 1;
+    },
+    UnlinkFood(index) {
+        this.Meals.splice(index, 1);
+        return this.Meals.length-1;
     },
 
     JoinWeight(lbs){
@@ -78,6 +93,7 @@ module.exports.Profile = {
             Height: this.Height,
             Friends: this.Friends,
             Exercises: this.Exercises,
+            Meals: this.Meals,
         }
     }
 }

@@ -21,12 +21,18 @@ export const Exercise_Server = {
     joinExercise(name, sets, reps, max) {
         return api('addexercises', { name, sets, reps, max});
     },
+    joinFood(name, calories, servings) {
+        return api('addfoods', { name, calories, servings});
+    },
 
     unlinkFriend(index) {
         return api('delfriends', { index });
     },
     unlinkExercise(index) {
         return api('delexercises', { index });
+    },
+    unlinkFood(index) {
+        return api('delfoods', { index });
     },
 
     joinWeight(lbs) {

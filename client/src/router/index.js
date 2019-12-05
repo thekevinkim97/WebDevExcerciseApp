@@ -10,8 +10,10 @@ import Exercises from '../views/Exercises.vue';
 import Login from '../views/Login';
 import SignOut from '../views/SignOut';
 
-import ChangeWeight from '../views/ChangeWeight'
-import ChangeHeight from '../views/ChangeHeight'
+import ChangeWeight from '../views/ChangeWeight';
+import ChangeHeight from '../views/ChangeHeight';
+
+import MealPlan from '../views/MealPlan';
 
 Vue.use(VueRouter);
 
@@ -72,6 +74,19 @@ const routes = [
     path: '/changetheheight',
     name: 'change-height',
     component: ChangeHeight,
+  },
+  {
+    path: '/mealplan',
+    name: 'mealplan',
+    component: MealPlan,
+    
+    beforeEnter: (to, from, next) => {
+      if(User.User_Id == null) {
+        next( { name: "login" } )
+      } else {
+        next();
+      }
+    }
   },
 ];
 
