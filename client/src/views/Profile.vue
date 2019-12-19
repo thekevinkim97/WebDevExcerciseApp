@@ -3,9 +3,18 @@
     <h1 class="is-size-1">
         User Profile
     </h1> 
-
+    
     <div class="columns">
         <div class="column is-one-third">
+            
+        <v-select 
+        :options="options">
+        </v-select>
+            
+            <select v-model="selected" multiple>
+                <option v-for="(p, i) in profile.Friends" :key="i">{{p.name}}</option>
+            </select>
+
             <ul class="panel">
                 <p class="panel-heading">
                     User
@@ -22,7 +31,11 @@
                     Your Friends
                 </p>
                 <li v-for="(p, index) in profile.Friends" :key="index" class="panel-block is-active">
+
+                    
                     {{p.name}} 
+                    
+
                     <button @click="deleteFriend(index)">
                         delete
                     </button>
@@ -85,8 +98,10 @@
 
 <script>
 import { Exercise_Server } from "../models/Profile";
+import { api } from "../models/my-fetch";
 export default {
     data: ()=> ({
+        options:[],
         profile: {},
         friend: "",
         error: ""
@@ -105,6 +120,10 @@ export default {
                     console.error(err);
                     this.error = err.message;
                 });
+        },
+        fetchOptions(search, loading) {
+
+            api('filtered-friends?search=$search')
         }
     }
 }

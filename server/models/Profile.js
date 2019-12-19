@@ -95,5 +95,5 @@ module.exports.Profile = {
             Exercises: this.Exercises,
             Meals: this.Meals,
         }
-    }
+    },
 }

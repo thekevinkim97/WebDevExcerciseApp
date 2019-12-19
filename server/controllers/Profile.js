@@ -5,6 +5,11 @@ const app = express.Router();
 app.get('/', (req, res)=> {
     res.send(Profile.Get_State());
 });
+
+app.get('/filtered-friends', (req, res)=> {
+    res.send(Profile.Friends.name.filter(x=> x.includes(req.query.search)).slice(0,7) );
+});
+
 app.post('/user', (req, res) => {
     const current_id = Profile.JoinUser(req.body.name);
     res.send({ success: true, current_id });
